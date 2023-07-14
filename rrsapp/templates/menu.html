@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants Menu</title>
+    <link rel="stylesheet" href="../../static/menu.css">
+</head>
+<body style="background-image: url('../../static/images/home-bg.jpg');">
+    <div class="heading">
+        <h1>Menu</h1>
+        <h2><span class="menu-topic"><a href="../">Main Menu</a></span>
+            <span><a href="../booknow">Book a Table</a></span>
+        </h2>
+    </div>
+    <div class="subheading">
+        <h1>Veg Menu</h1>
+    </div>
+        <div class="container">
+            <div class="menu">
+                <h2 class="menu-group-heading">
+                    <span class="menu-topic">Item</span>
+                    <span class="menu-item-price">Price</span>
+                </h2>
+                <div class="menu-group">
+                    {% for i in veg %}
+                        <div class="menu-item">
+                            <img src="{{i.Image.url}}" alt="{{i.Item_Name}}" class="menu-item-image">
+                            <div class="menu-item-text">
+                                <h3 class="menu-item-heading">
+                                    <span class="menu-item-name">{{i.Item_Name}}</span>
+                                    <span class="menu-item-price">{{i.Item_Price}}</span>
+                                </h3>
+                                <p class="menu-item-description">
+                                    Cuisine Type : {{i.Cuisine_Type}}
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    
+    <div class="subheading">
+        <h1>NonVeg Menu</h1>
+    </div>
+        <div class="container">
+            <div class="menu">
+                <h2 class="menu-group-heading">
+                    <span class="menu-topic">Item</span>
+                    <span class="menu-item-price">Price</span>
+                </h2>
+                <div class="menu-group">
+                    {% for i in nonveg %}
+                        <div class="menu-item">
+                            <img src="{{i.Image.url}}" alt="{{i.Item_Name}}" class="menu-item-image">
+                            <div class="menu-item-text">
+                                <h3 class="menu-item-heading">
+                                    <span class="menu-item-name">{{i.Item_Name}}</span>
+                                    <span class="menu-item-price">{{i.Item_Price}}</span>
+                                </h3>
+                                <p class="menu-item-description">
+                                    Cuisine Type : {{i.Cuisine_Type}}
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>    
+</body>
+</html>
